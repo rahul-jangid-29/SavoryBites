@@ -1,0 +1,57 @@
+/* Custom Animations */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0%);
+        background-color: #ef4f4f;
+        color: #1c1210;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        background-color: #ef4f4f;
+        color: #1c1210;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0%);
+        background-color: #FFB6C1;
+        color: #43494c;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        background-color: #FFB6C1;
+        color: #43494c;
+    }
+}
+
+/* Custom Classes */
+.intro-slide-left {
+    animation: slideLeft 1s ease-in-out forwards;
+}
+
+.intro-slide-up {
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+/* Right-bottom positioning for both animations */
+.intro-slide-left,
+.intro-slide-up {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-7xl {
+    font-size: 10rem;
+    font-weight: 900;
+}

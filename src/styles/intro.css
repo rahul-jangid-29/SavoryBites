@@ -36,17 +36,20 @@
     animation: slideUp 1s ease-in-out forwards;
 }
 
-/* Right-bottom positioning for both animations */
+/* Center positioning for both animations */
 .intro-slide-left,
 .intro-slide-up {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
 }
 
+/* Font family and size */
 .font-poppins {
     font-family: 'Poppins', sans-serif;
 }
@@ -54,4 +57,19 @@
 .text-7xl {
     font-size: 10rem;
     font-weight: 900;
+}
+
+/* Smooth transitions for homepage */
+.intro-page {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Fade in effect for homepage after animation sequence */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

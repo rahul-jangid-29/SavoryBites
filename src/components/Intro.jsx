@@ -27,7 +27,7 @@ function Intro() {
     <div className="h-screen w-screen overflow-hidden">
       {animationStage === "slideLeft" && (
         <div
-          className="intro-slide-left absolute w-full h-full flex items-end justify-end bg-[#FF7F7F] text-[#3E2723] text-7xl font-extrabold font-poppins"
+          className="intro-slide-left absolute w-full h-full flex items-center justify-center bg-[#FF7F7F] text-[#3E2723] text-7xl font-extrabold font-poppins"
         >
           SavoryBites
         </div>
@@ -35,7 +35,7 @@ function Intro() {
 
       {animationStage === "slideUp" && (
         <div
-          className="intro-slide-up absolute w-full h-full flex items-end justify-end bg-[#FFB6C1] text-[#B0BEC5] text-7xl font-extrabold font-poppins"
+          className="intro-slide-up absolute w-full h-full flex items-center justify-center bg-[#FFB6C1] text-[#B0BEC5] text-7xl font-extrabold font-poppins"
         >
           SavoryBites
         </div>

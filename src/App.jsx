@@ -3,7 +3,9 @@ import "./index.css";
 import Intro from "./components/Intro";
 
 function App() {
-  return <Intro />;
+  return (
+    <Intro />
+  )
 }
 
 export default App;

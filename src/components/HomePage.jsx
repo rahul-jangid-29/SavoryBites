@@ -1,40 +1,27 @@
-// src/components/HeroPage.jsx
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import heroImage from "../assets/hero.jpg"; // Import image directly
 import Navbar from "./Navbar";
+import EventsPage from "./EventsPage";
+import GalleryPage from "./GalleryPage";
+import MenuPage from "./MenuPage";
+import OnlineOrderingPage from "./OnlineOrderingPage";
+import Reservation from "./ReservationPage";
+import "../styles/homepage.css"
 
 function HeroPage() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Handle scroll event for sticky navbar effect
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div>
-      <Navbar isScrolled={isScrolled} />
-
       {/* Hero Section */}
-      <section
-        id="home"
-        className="h-screen bg-cover bg-center bg-no-repeat relative"
-        style={{
-          backgroundImage: `url(${heroImage})`, // Use the imported image here
-        }}
-      >
+      <section id="home" className="h-screen relative overflow-hidden">
+        {/* Hero Image with Ken Burns Effect */}
+        <div
+          className="hero-image absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+          }}
+        ></div>
+
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="container mx-auto h-full flex justify-center items-center relative z-10">
           <div className="text-center text-white space-y-4 animate-fadeIn">
@@ -50,6 +37,11 @@ function HeroPage() {
           </div>
         </div>
       </section>
+
+      <EventsPage />
+      <GalleryPage />
+      <MenuPage />
+      <Reservation />
     </div>
   );
 }

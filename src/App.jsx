@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router  basename="/SavoryBites">
       {/* Navbar component visible on every page */}
       <Navbar isScrolled={isScrolled} />
 

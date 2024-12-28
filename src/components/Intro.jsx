@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import "../styles/intro.css"; // Import the CSS file with custom styles
-import HomePage from "./HomePage";
 
 function Intro() {
   const [animationStage, setAnimationStage] = useState("slideLeft"); // Start with "slideLeft" animation
+  const navigate = useNavigate(); // React Router's navigate function
 
   useEffect(() => {
     // Start the slideLeft animation
     const timer = setTimeout(() => {
-      setAnimationStage("done"); // Transition directly to the homepage after slideLeft
+      setAnimationStage("done"); // Update animation stage
+      navigate("/home"); // Redirect to /home after animation
     }, 1000); // Duration of slideLeft animation
 
     return () => clearTimeout(timer); // Clean up timer if component unmounts
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="h-screen w-screen overflow-hidden">
@@ -23,8 +25,6 @@ function Intro() {
           SavoryBites
         </div>
       )}
-
-      {animationStage === "done" && <HomePage />}
     </div>
   );
 }
